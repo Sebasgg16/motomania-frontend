@@ -18,16 +18,17 @@ import { ServiciosComponent } from "./pages/private/servicios/servicios.componen
 
 
 export const routes : Routes = [
-    {path : 'categorias', component: CategoriasComponent},
-    {path: 'productos', component: ProductosComponent},
-    {path: 'citas', component: CitasComponent},
-    {path: 'repuestos', component: RepuestosComponent},
-    {path: 'servicios', component: ServiciosComponent},
+   
     {path : 'home', component: HomeComponent},
     {path: 'login', component: LoginComponent},
     {path: 'login', component: RegisterComponent},
     {path: 'credits', component: CreditsComponent},
     {path: 'dashboard', component: DashboardComponent}, 
+    {path : 'dashboard/categorias', component: CategoriasComponent},
+    {path: 'dashboard/productos', component: ProductosComponent},
+    {path: 'dashboard/citas', component: CitasComponent},
+    {path: 'dashboard/repuestos', component: RepuestosComponent},
+    {path: 'dashboard/servicios', component: ServiciosComponent},
     {path: 'dashboard/users', component: UsersComponent},
     {path: 'register', component: RegisterComponent},
     {path: "404", component: PagesNotFoundComponent},
