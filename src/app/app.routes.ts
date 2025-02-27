@@ -11,10 +11,10 @@ import { ProductosComponent } from "./pages/private/productos/productos.componen
 import { CitasComponent } from "./pages/private/citas/citas.component";
 import { RepuestosComponent } from "./pages/private/repuestos/repuestos.component";
 import { ServiciosComponent } from "./pages/private/servicios/servicios.component";
-
-
-
-
+import { CrearRepuestosComponent } from "./pages/private/crear-repuestos/crear-repuestos.component";
+import { EditarRepuestosComponent } from "./pages/private/editar-repuestos/editar-repuestos.component";
+import { ListadoRepuestosComponent } from "./pages/public/listado-repuestos/listado-repuestos.component";
+import { CrearServicioComponent } from "./pages/private/crear-servicio/crear-servicio.component";
 
 
 export const routes : Routes = [
@@ -23,14 +23,21 @@ export const routes : Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'login', component: RegisterComponent},
     {path: 'credits', component: CreditsComponent},
-    {path: 'dashboard', component: DashboardComponent}, 
-    {path : 'dashboard/categorias', component: CategoriasComponent},
-    {path: 'dashboard/productos', component: ProductosComponent},
-    {path: 'dashboard/citas', component: CitasComponent},
-    {path: 'dashboard/repuestos', component: RepuestosComponent},
+    {path: 'dashboard', component: DashboardComponent},
+    {path: 'register', component: RegisterComponent}, 
+    {path: 'repuestos',component:ListadoRepuestosComponent},
     {path: 'dashboard/servicios', component: ServiciosComponent},
     {path: 'dashboard/users', component: UsersComponent},
-    {path: 'register', component: RegisterComponent},
+    {path: 'dashboard/servicios', component: ServiciosComponent},
+    {path: 'dashboard/users', component: UsersComponent},
+    {path: 'dashboard/categorias', component: CategoriasComponent},
+    {path: 'dashboard/citas', component: CitasComponent},
+    {path: 'dashboard/productos', component: ProductosComponent},
+    {path: 'dashboard/repuestos', component: RepuestosComponent},
+    {path: 'dashboard/repuestos/crear', component: CrearRepuestosComponent},
+    {path: 'dashboard/repuestos/editar', component: EditarRepuestosComponent},
+    {path: 'dashboard/repuestos/lista', component: ListadoRepuestosComponent}, 
+    {path:'dashboard/servicios/crear',component: CrearServicioComponent},
     {path: "404", component: PagesNotFoundComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', redirectTo: '404', pathMatch: "full"}
