@@ -1,22 +1,18 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
-
 @Component({
-  selector: 'app-crear-repuestos',
+  selector: 'app-crear-categoria',
   imports: [ReactiveFormsModule],
-  templateUrl: './crear-repuestos.component.html',
-  styleUrl: './crear-repuestos.component.css'
+  templateUrl: './crear-categoria.component.html',
+  styleUrl: './crear-categoria.component.css'
 })
-export class CrearRepuestosComponent {
+export class CrearCategoriaComponent {
   formData!:FormGroup
-
   constructor(){
     this.formData = new FormGroup({
-      agregarprecio: new FormControl('', [Validators.required]),
-      agregarprudcto: new FormControl('', [Validators.required]),
+      agregarCategoria: new FormControl('', [Validators.required]),
       agregardescripcion: new FormControl ('', [Validators.required]),
-      agregarimagen: new FormControl ('', [Validators.required])
     })
 
   }
@@ -27,5 +23,7 @@ export class CrearRepuestosComponent {
     this.formData.reset() 
     
   }
-
 }
+
+
+

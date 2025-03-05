@@ -1,0 +1,22 @@
+<form action ="form form-crear-categoria"
+[formGroup]="formData"
+(ngSubmit)="onSubmit()"
+>
+    
+    <h1>Crear categoria</h1>
+    <div class="form-content">
+        <div class="field">
+            <label for="agregarcategoria">Escriba el nombre de la categoria *</label>
+            <input type="text" formControlName="agregarcategoria" id="agregarcategoria" placeholder="">
+        </div>
+        <div class="field">
+            <label for="agregardescripcion">Descripcion de la categoria *</label>
+            <!-- <input type="text" formControlName= "agregardescripcion" id="agregardescripcion" placeholder="ajjajajaasdasd"> -->
+           <textarea formControlName="agregardescripcion" id="agregardescripcion" placeholder="escriba la descipcion de la categoria"></textarea>
+        </div>
+        <div class="field">
+            <button type="submit">Agregar categoria</button>
+        </div>
+    </div>
+
+</form> 

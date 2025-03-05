@@ -7,7 +7,6 @@ import { UsersComponent } from "./pages/private/users/users.component";
 import { PagesNotFoundComponent } from "./pages/public/pages-not-found/pages-not-found.component";
 import { DashboardComponent } from "./pages/private/dashboard/dashboard.component";
 import { CategoriasComponent } from "./pages/private/categorias/categorias.component";
-import { ProductosComponent } from "./pages/private/productos/productos.component";
 import { CitasComponent } from "./pages/private/citas/citas.component";
 import { RepuestosComponent } from "./pages/private/repuestos/repuestos.component";
 import { ServiciosComponent } from "./pages/private/servicios/servicios.component";
@@ -15,6 +14,7 @@ import { CrearRepuestosComponent } from "./pages/private/crear-repuestos/crear-r
 import { EditarRepuestosComponent } from "./pages/private/editar-repuestos/editar-repuestos.component";
 import { ListadoRepuestosComponent } from "./pages/public/listado-repuestos/listado-repuestos.component";
 import { CrearServicioComponent } from "./pages/private/crear-servicio/crear-servicio.component";
+import { CrearCategoriaComponent } from "./pages/private/crear-categoria/crear-categoria.component";
 
 
 export const routes : Routes = [
@@ -32,9 +32,9 @@ export const routes : Routes = [
     {path: 'dashboard/users', component: UsersComponent},
     {path: 'dashboard/categorias', component: CategoriasComponent},
     {path: 'dashboard/citas', component: CitasComponent},
-    {path: 'dashboard/productos', component: ProductosComponent},
     {path: 'dashboard/repuestos', component: RepuestosComponent},
     {path: 'dashboard/repuestos/crear', component: CrearRepuestosComponent},
+    {path: 'dashboard/categorias/crear', component: CrearCategoriaComponent},
     {path: 'dashboard/repuestos/editar', component: EditarRepuestosComponent},
     {path: 'dashboard/repuestos/lista', component: ListadoRepuestosComponent}, 
     {path:'dashboard/servicios/crear',component: CrearServicioComponent},

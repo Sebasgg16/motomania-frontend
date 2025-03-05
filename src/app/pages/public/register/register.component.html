@@ -1,1 +1,66 @@
-<p>register works!</p>
+<form 
+action="form form-login"
+[formGroup]="formData"
+(ngSubmit)="onSubmit()"
+>
+    
+    <h1>register</h1>
+    <div class="form-content">
+        <div class="field">
+            <label for="name">Name *</label>
+            <input type="text" formControlName="name" id="name" placeholder="Ej: juan@correo.com">
+            <div class="error">
+            @if(this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || this.formData.get('name')?.touched)){
+                
+                @if(this.formData.get('name')?.errors?.["required"] ){
+                    <span>tiene que escribir un nombre</span>
+                }
+            }
+        </div> 
+        </div>
+        <div class="field">
+            <label for="username">username *</label>
+            <input type="text" formControlName="username" id="username" placeholder="Ej: juan@correo.com">
+            <div class="error">
+            @if(this.formData.get('username')?.invalid && (this.formData.get('username')?.dirty || this.formData.get('username')?.touched)){
+                
+                @if(this.formData.get('username')?.errors?.["required"] ){
+                    <span>tiene que escribir un username</span>
+                }   
+            }
+        </div> 
+
+        <div class="field">
+            <label for="password">Password *</label>
+            <input type="text" formControlName="password" id="password" placeholder="Ej: 123456789">
+            <div class="error">
+                @if(this.formData.get('password')?.invalid && (this.formData.get('password')?.dirty || this.formData.get('password')?.touched)){
+                    @if(this.formData.get('username')?.errors?.["required"] ){
+                        <span>la contrase;a es obligatoria</span>
+                    }
+                    @if(this.formData.get('password')?.errors?.["minlength"] ){
+                        <span>tiene que ser minimo 6 caracteres</span>
+                    }@if(this.formData.get('password')?.errors?.["maxlength"] ){
+                        <span>tiene que ser maximo 12 caracteres</span>
+                    }
+                   
+                }            
+            </div>
+        </div>
+        <div class="field">
+            <button type="submit">Login</button>
+        </div>
+        <pre>
+            <code>
+                <div>{{this.formData.get('username')?.errors | json}}</div>
+                <div>{{this.formData.get('username')?.errors | json}}</div>
+            </code>
+        </pre>
+       
+    </div>
+</div>
+</form>
+
+
+
+

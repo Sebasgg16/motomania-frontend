@@ -1,2 +1,30 @@
-<p>crear-servicio works!</p>
-<h1>aaaaaaaaaaaaaaaaaaaaaaa</h1>
+<form action ="form form-crear-servicio"
+[formGroup]="formData"
+(ngSubmit)="onSubmit()"
+>
+    
+    <h1>Crear Servicio</h1>
+    <div class="form-content">
+        <div class="field">
+            <label for="agregarimagen">Suba la imagen *</label>
+            <input type="text" formControlName="agregarimagen" id="agregarimagen" placeholder="">
+        </div>
+        <div class="field">
+            <label for="agregarservicio">Nombre Del Servicio *</label>
+            <input type="text" formControlName="agregarservicio" id="agregarservicio" placeholder="Nombre del Producto">
+        </div>
+        <div class="field">
+            <label for="agregarprecio">Precio Del Servicio *</label>
+            <input type="number" formControlName="agregarprecio" id="agregarprecio" placeholder="ej. aceites">
+        </div>
+        <div class="field">
+            <label for="agregardescripcion">Descripcion del servicio *</label>
+            <!-- <input type="text" formControlName= "agregardescripcion" id="agregardescripcion" placeholder="ajjajajaasdasd"> -->
+           <textarea formControlName="agregardescripcion" id="agregardescripcion" placeholder="jajajajajjajaja"></textarea>
+        </div>
+        <div class="field">
+            <button type="submit">Agregar</button>
+        </div>
+    </div>
+
+</form> 
