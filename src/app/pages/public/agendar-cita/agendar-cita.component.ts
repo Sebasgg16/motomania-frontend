@@ -11,10 +11,13 @@ export class AgendarCitaComponent {
   formData!:FormGroup
   constructor(){
     this.formData = new FormGroup({
-      agregarprecio: new FormControl('', [Validators.required]),
-      agregarservicio: new FormControl('', [Validators.required]),
-      agregardescripcion: new FormControl ('', [Validators.required]),
-      agregarimagen: new FormControl ('', [Validators.required])
+      // name: new FormControl('', [Validators.required]),
+      // description: new FormControl('', [Validators.required]),
+      // price: new FormControl ('', [Validators.required]),
+      // stock: new FormControl ('', [Validators.required]),
+      // urlImage: new FormControl('', [Validators.required]),
+      // categorias: new FormControl('', [Validators.required]),
+      // state: new FormControl ('', [Validators.required]),
     })
 
   }
