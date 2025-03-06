@@ -11,8 +11,8 @@ export class CrearCategoriaComponent {
   formData!:FormGroup
   constructor(){
     this.formData = new FormGroup({
-      agregarCategoria: new FormControl('', [Validators.required]),
-      agregardescripcion: new FormControl ('', [Validators.required]),
+      name: new FormControl('', [Validators.required]),
+      description: new FormControl (''),
     })
 
   }

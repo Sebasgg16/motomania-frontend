@@ -15,6 +15,7 @@ import { EditarRepuestosComponent } from "./pages/private/editar-repuestos/edita
 import { ListadoRepuestosComponent } from "./pages/public/listado-repuestos/listado-repuestos.component";
 import { CrearServicioComponent } from "./pages/private/crear-servicio/crear-servicio.component";
 import { CrearCategoriaComponent } from "./pages/private/crear-categoria/crear-categoria.component";
+import { AgendarCitaComponent } from "./pages/public/agendar-cita/agendar-cita.component";
 
 
 export const routes : Routes = [
@@ -26,6 +27,7 @@ export const routes : Routes = [
     {path: 'dashboard', component: DashboardComponent},
     {path: 'register', component: RegisterComponent}, 
     {path: 'repuestos',component:ListadoRepuestosComponent},
+    {path: 'cita/agendar', component: AgendarCitaComponent},
     {path: 'dashboard/servicios', component: ServiciosComponent},
     {path: 'dashboard/users', component: UsersComponent},
     {path: 'dashboard/servicios', component: ServiciosComponent},

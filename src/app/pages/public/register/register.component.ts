@@ -19,7 +19,10 @@ export class RegisterComponent {
     })
   }
   onSubmit(){
-  
+    if(this.formData.valid){
+      console.log(this.formData.value)
+    }
+    this.formData.reset() 
     } 
   }
 

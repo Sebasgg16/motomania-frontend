@@ -1,4 +1,4 @@
-<form action ="form form-crear-categoria"
+<form
 [formGroup]="formData"
 (ngSubmit)="onSubmit()"
 >
@@ -6,13 +6,13 @@
     <h1>Crear categoria</h1>
     <div class="form-content">
         <div class="field">
-            <label for="agregarcategoria">Escriba el nombre de la categoria *</label>
-            <input type="text" formControlName="agregarcategoria" id="agregarcategoria" placeholder="">
+            <label for="name">Escriba el nombre de la categoria *</label>
+            <input type="text" formControlName="name" id="name" placeholder="">
         </div>
         <div class="field">
-            <label for="agregardescripcion">Descripcion de la categoria *</label>
+            <label for="description">Descripcion de la categoria *</label>
             <!-- <input type="text" formControlName= "agregardescripcion" id="agregardescripcion" placeholder="ajjajajaasdasd"> -->
-           <textarea formControlName="agregardescripcion" id="agregardescripcion" placeholder="escriba la descipcion de la categoria"></textarea>
+           <textarea formControlName="description" id="description" placeholder="escriba la descipcion de la categoria"></textarea>
         </div>
         <div class="field">
             <button type="submit">Agregar categoria</button>
