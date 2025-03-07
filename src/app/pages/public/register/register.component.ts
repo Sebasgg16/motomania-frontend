@@ -19,10 +19,22 @@ export class RegisterComponent {
     })
   }
   onSubmit(){
+    const inputData = this.formData.value
     if(this.formData.valid){
-      console.log(this.formData.value)
+      console.log(inputData);
+      this.authService.registerUser(inputData).subscribe({
+        next:(data)=> {
+          console.log(data)
+        },
+        error:(err)=> {
+          console.log(err)
+        },
+        complete:()=>{
+          console.log('registro exitoso')
+          this.formData.reset()
+        }
+      })
     }
-    this.formData.reset() 
     } 
   }
 

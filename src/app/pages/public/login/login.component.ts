@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class LoginComponent {
    formData! : FormGroup
-   constructor(){
+   constructor(private authService: AuthService){
     this.formData = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength (6), Validators.maxLength(12)])
@@ -19,12 +20,25 @@ export class LoginComponent {
 
 
    onSubmit(){
-
-
-
+   const inputData = this.formData.value
     if(this.formData.valid){
-      console.log(this.formData.value)
+      console.log(inputData)
+
+
+      this.authService.loginUser(inputData).subscribe({
+        next: (data)=>{
+          console.log(data)
+          localStorage.setItem('token', data.token!)
+          delete data.data?.password
+          localStorage.setItem('authUser', JSON.stringify(data.data))
+        },
+        error:(err)=>{
+          console.error(err)
+        },
+        complete: ()=>{
+          this.formData.reset()
+        }
+      });
     }
-    this.formData.reset()  //limpia los valores del formularion
    }
 }
