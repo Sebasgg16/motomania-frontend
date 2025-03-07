@@ -1,0 +1,30 @@
+<form action
+[formGroup]="formData"
+(ngSubmit)="onSubmit()"
+>
+    
+    <h1>Editar Servicio</h1>
+    <div class="form-content">
+        <div class="field">
+            <label for="urlImagen">Suba la imagen</label>
+            <input type="text" formControlName="urlImagen" id="urlImagen" placeholder="suba el archivo">
+        </div>
+        <div class="field">
+            <label for="name"> Editar Nombre Del Servicio </label>
+            <input type="text" formControlName="name" id="name" placeholder="Editar Nombre del Producto">
+        </div>
+        <div class="field">
+            <label for="price">Editar Precio Del Servicio </label>
+            <input type="number" formControlName="price" id="price" placeholder="$2.000">
+        </div>
+        <div class="field">
+            <label for="description">Editar Descripcion del servicio</label>
+            <!-- <input type="text" formControlName= "agregardescripcion" id="agregardescripcion" placeholder="ajjajajaasdasd"> -->
+           <textarea formControlName="description" id="description" placeholder="edite la description"></textarea>
+        </div>
+        <div class="field">
+            <button type="submit">Guardar Cambios</button>
+        </div>
+    </div>
+
+</form> 
