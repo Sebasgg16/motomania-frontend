@@ -1,18 +1,25 @@
-<nav>
-    <a href="#">
-        <img src="assets/images/site-logo.jpg" alt="Site Logo: Motomania" class="site-logo">
-    </a>
-
-    <ul class= "main-menu"> 
-        <li><a routerLink="dashboard"routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a></li>
-   <!--- <li><a routerLink="dashboard/users" routerLinkActive="active">Users</a></li> -->
-     <li><a [routerLink]="['dashboard', 'users']"routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">users</a></li>
-    <li><a routerLink="credits" routerLinkActive="active">Credits</a></li>
-    <li><a routerLink="login" routerLinkActive="active">Login</a></li>
-    <li><a routerLink="register" routerLinkActive="active">Register</a></li>
-    <li><a routerLink="dashboard/servicios/crear"routerLinkActive="active">Crear Servicio</a></li>
-    <li><a routerLink="dashboard/repuestos/crear"routerLinkActive="active">Crear Repuestos</a></li>
-    <li><a routerLink="dashboard/categorias/crear"routerLinkActive="active">Crear Categorias</a></li>
-    <li><a routerLink="citas/agendar" routerLinkActive="active">Agendar Cita</a></li>
-    </ul>
-</nav>
+<header class="header">
+    <div class="container header-content">
+        <div class="header-content__left">
+        </div>
+        <div class="imagen-logo">
+            <a routerLink="home">
+                <img class="Logo" src="assets/images/logo-blanco.jpeg" >
+            </a>
+        </div>
+        <div class="header-content__center">
+            <nav>
+                <ul class="menu-principal">
+                    <li class="menu-item"><a routerLink="cita/agendar"  routerLinkActive="active" class="nav-link">Agendar cita</a></li>
+                    <li class="menu-item"><a routerLink="servicios"  routerLinkActive="active" class="nav-link">Servicios</a></li>
+                    <li class="menu-item"><a href="#"  routerLinkActive="active" class="nav-link">Contacto</a></li>
+                    <li class="menu-item"><a routerLink="login" routerLinkActive="active" class="nav-link">Login</a></li>
+                    <li class="menu-item"><a routerLink="register" routerLinkActive="active" class="nav-link">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content__right">
+            <input type="text" placeholder="Busqueda">
+        </div>
+    </div>
+</header>

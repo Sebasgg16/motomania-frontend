@@ -3,27 +3,23 @@
 (ngSubmit)="onSubmit()"
 >
     
-    <h1>Crear Servicio</h1>
+    <h1>Agendar Cita</h1>
     <div class="form-content">
         <div class="field">
-            <label for="agregarimagen">Suba la imagen *</label>
-            <input type="text" formControlName="agregarimagen" id="agregarimagen" placeholder="">
+            <label for="name">Escriba su nombre *</label>
+            <input type="text" formControlName="name" id="name" placeholder="nombre">
         </div>
         <div class="field">
-            <label for="agregarservicio">Nombre Del Servicio *</label>
-            <input type="text" formControlName="agregarservicio" id="agregarservicio" placeholder="Nombre del Producto">
+            <label for="description">Problema *</label>
+           <textarea formControlName="description" id="description" placeholder="resuma el problema que presenta su vehiculo"></textarea>
         </div>
         <div class="field">
-            <label for="agregarprecio">Precio Del Servicio *</label>
-            <input type="number" formControlName="agregarprecio" id="agregarprecio" placeholder="ej. aceites">
+            <label for="day">Dia de la cita *</label>
+            <iframe src="https://calendar.google.com/calendar/embed?src=07b033cbd808ec94fbf8ecdcb3b7846323edb706e4f7c59d3c0c1a3784a8d1c9%40group.calendar.google.com&ctz=America%2FBogota" style="border: 0" width="300" height="300" frameborder="2" scrolling="yes"></iframe>
         </div>
+        
         <div class="field">
-            <label for="agregardescripcion">Descripcion del servicio *</label>
-            <!-- <input type="text" formControlName= "agregardescripcion" id="agregardescripcion" placeholder="ajjajajaasdasd"> -->
-           <textarea formControlName="agregardescripcion" id="agregardescripcion" placeholder="jajajajajjajaja"></textarea>
-        </div>
-        <div class="field">
-            <button type="submit">Agregar</button>
+            <button type="submit">agendar cita</button>
         </div>
     </div>
 
