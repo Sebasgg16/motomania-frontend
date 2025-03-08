@@ -1,5 +1,6 @@
-  import { Component, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ServicioService } from '../../../services/servicio.service';
 
 @Component({
   selector: 'app-crear-servicio',
@@ -10,7 +11,7 @@ import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angula
 export class CrearServicioComponent {
   formData!:FormGroup
 
-  constructor(){
+  constructor( private servicioService: ServicioService){
     this.formData = new FormGroup({
       urlImagen: new FormControl('',[Validators.required]),
       price: new FormControl(0, [Validators.required]),
@@ -20,10 +21,23 @@ export class CrearServicioComponent {
 
   }
   onSubmit(){
-    if(this.formData.valid){
-      console.log(this.formData.value)
-    }
-    this.formData.reset() 
+    const inputData = this.formData.value
+     if(this.formData.valid){
+       console.log(inputData)
+ 
+ 
+       this.servicioService.createServicio(inputData).subscribe({
+         next: (data)=>{
+           console.log(data)
+         },
+         error:(err)=>{
+           console.error(err)
+         },
+         complete: ()=>{
+           this.formData.reset()
+         }
+       });
+     }
     
   }
 
