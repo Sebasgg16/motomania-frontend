@@ -24,7 +24,7 @@ export class EditarRepuestosComponent {
       price: new FormControl ( 0, [Validators.required]),
       stock: new FormControl ( 1, [Validators.required]),
       urlImage: new FormControl('', [Validators.required]),
-      categorias: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required]),
       state: new FormControl (true, [Validators.required]),
     })
 
