@@ -3,62 +3,53 @@
     (ngSubmit)="onSubmit()"
 >
     
-    <h1>register</h1>
-    <div class="form-content">
-        <div class="field">
-            <label for="name">Name *</label>
-            <input type="text" formControlName="name" id="name" placeholder="Ej: Sebastian">
-            <div class="error">
-            @if(this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || this.formData.get('name')?.touched)){
-                
-                @if(this.formData.get('name')?.errors?.["required"] ){
-                    <span>tiene que escribir un nombre</span>
-                }
-            }
-        </div> 
-        </div>
-        <div class="field">
-            <label for="username">username *</label>
-            <input type="text" formControlName="username" id="username" placeholder="Ej: Sebastian@correo.com">
-            <div class="error">
-            @if(this.formData.get('username')?.invalid && (this.formData.get('username')?.dirty || this.formData.get('username')?.touched)){
-                
-                @if(this.formData.get('username')?.errors?.["required"] ){
-                    <span>tiene que escribir un username</span>
-                }   
-            }
-        </div> 
-
-        <div class="field">
-            <label for="password">Password *</label>
-            <input type="text" formControlName="password" id="password" placeholder="Ej: 123456789">
-            <div class="error">
-                @if(this.formData.get('password')?.invalid && (this.formData.get('password')?.dirty || this.formData.get('password')?.touched)){
-                    @if(this.formData.get('username')?.errors?.["required"] ){
-                        <span>la contrase;a es obligatoria</span>
+<body>
+    <div class="container">
+        <form [formGroup]="formData" (ngSubmit)="onSubmit()" class="register-form">
+            <h1>Registro</h1>
+            <div class="field">
+                <label for="name">Nombre *</label>
+                <input type="text" formControlName="name" id="name" placeholder="Ej: Sebastian">
+                <div class="error">
+                    @if(this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || this.formData.get('name')?.touched)){
+                        @if(this.formData.get('name')?.errors?.["required"]){
+                            <span>tiene que escribir un nombre</span>
+                        }
                     }
-                    @if(this.formData.get('password')?.errors?.["minlength"] ){
-                        <span>tiene que ser minimo 6 caracteres</span>
-                    }@if(this.formData.get('password')?.errors?.["maxlength"] ){
-                        <span>tiene que ser maximo 12 caracteres</span>
-                    }
-                   
-                }            
+                </div>
             </div>
-        </div>
-        <div class="field">
-            <button type="submit">Login</button>
-        </div>
-        <pre>
-            <code>
-                <div>{{this.formData.get('username')?.errors | json}}</div>
-                <div>{{this.formData.get('username')?.errors | json}}</div>
-            </code>
-        </pre>
-       
+            <div class="field">
+                <label for="username">Usuario *</label>
+                <input type="text" formControlName="username" id="username" placeholder="Ej: Sebastian@correo.com">
+                <div class="error">
+                    @if(this.formData.get('username')?.invalid && (this.formData.get('username')?.dirty || this.formData.get('username')?.touched)){
+                        @if(this.formData.get('username')?.errors?.["required"]){
+                            <span>tiene que escribir un username</span>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="field">
+                <label for="password">Contraseña *</label>
+                <input type="password" formControlName="password" id="password" placeholder="Ej: 123456789">
+                <div class="error">
+                    @if(this.formData.get('password')?.invalid && (this.formData.get('password')?.dirty || this.formData.get('password')?.touched)){
+                        @if(this.formData.get('password')?.errors?.["required"]){
+                            <span>la contraseña es obligatoria</span>
+                        }
+                        @if(this.formData.get('password')?.errors?.["minlength"]){
+                            <span>tiene que ser mínimo 6 caracteres</span>
+                        }
+                        @if(this.formData.get('password')?.errors?.["maxlength"]){
+                            <span>tiene que ser máximo 12 caracteres</span>
+                        }
+                    }
+                </div>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
     </div>
-</div>
-</form>
+</body>
 
 
 

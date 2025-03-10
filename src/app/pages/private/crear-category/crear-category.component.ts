@@ -1,13 +1,13 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-
 @Component({
-  selector: 'app-crear-categoria',
+  selector: 'app-crear-category',
   imports: [ReactiveFormsModule],
-  templateUrl: './crear-categoria.component.html',
-  styleUrl: './crear-categoria.component.css'
+  templateUrl: './crear-category.component.html',
+  styleUrl: './crear-category.component.css'
 })
-export class CrearCategoriaComponent {
+export class CrearCategoryComponent {
   formData!:FormGroup
   constructor(){
     this.formData = new FormGroup({
@@ -16,12 +16,15 @@ export class CrearCategoriaComponent {
     })
 
   }
-  onSubmit(){
-    if(this.formData.valid){
-      console.log(this.formData.value)
+  onSubmit() {
+    const inputData = this.formData.value
+    if (this.formData.valid) {
+      console.log(inputData)
+      
+      
+
     }
-    this.formData.reset() 
-    
+    this.formData.reset
   }
 }
 

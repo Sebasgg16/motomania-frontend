@@ -4,55 +4,43 @@ action="form form-login"
 (ngSubmit)="onSubmit()"
 >
     
-    <h1>login</h1>
-    <div class="form-content">
-        <div class="field">
-            <label for="username">Username *</label>
-            <input type="text" formControlName="username" id="username" placeholder="Ej: juan@correo.com">
-            <div class="error">
-            @if(this.formData.get('username')?.invalid && (this.formData.get('username')?.dirty || this.formData.get('username')?.touched)){
-                
-                @if(this.formData.get('username')?.errors?.["required"] ){
-                    <span>el correo es obligatorio</span>
-                }
-                @if(this.formData.get('username')?.errors?.["email"] ){
-                    <span>Formato de correo invalido</span>
-                }
-            }
-        </div> 
-        </div>
-
-        <div class="field">
-           
-            <label for="password">Password *</label>
-            <input type="text" formControlName="password" id="password" placeholder="Ej: 123456789">
-            <div class="error">
-                @if(this.formData.get('password')?.invalid && (this.formData.get('password')?.dirty || this.formData.get('password')?.touched)){
-                    @if(this.formData.get('username')?.errors?.["required"] ){
-                        <span>la contrase;a es obligatoria</span>
+<body>
+    <div class="container">
+        <form [formGroup]="formData" (ngSubmit)="onSubmit()" class="login-form">
+            <h1>Login</h1>
+            <div class="field">
+                <label for="username">Username *</label>
+                <input type="text" formControlName="username" id="username" placeholder="Ej: juan@correo.com">
+                <div class="error">
+                    @if(this.formData.get('username')?.invalid && (this.formData.get('username')?.dirty || this.formData.get('username')?.touched)){
+                        @if(this.formData.get('username')?.errors?.["required"]){
+                            <span>El correo es obligatorio</span>
+                        }
+                        @if(this.formData.get('username')?.errors?.["email"]){
+                            <span>Formato de correo inválido</span>
+                        }
                     }
-                    @if(this.formData.get('password')?.errors?.["minlength"] ){
-                        <span>tiene que ser minimo 6 caracteres</span>
-                    }@if(this.formData.get('password')?.errors?.["maxlength"] ){
-                        <span>tiene que ser maximo 12 caracteres</span>
-                    }
-                   
-                }            
+                </div>
             </div>
-        </div>
-        <div class="field">
-            <button type="submit"[disabled]="this.formData.invalid">login</button> 
-        </div>
-        <pre>
-            <code>
-                <div>{{this.formData.get('username')?.errors | json}}</div>
-                <div>{{this.formData.get('username')?.errors | json}}</div>
-            </code>
-        </pre>
-       
+            <div class="field">
+                <label for="password">Password *</label>
+                <input type="password" formControlName="password" id="password" placeholder="Ej: 123456789">
+                <div class="error">
+                    @if(this.formData.get('password')?.invalid && (this.formData.get('password')?.dirty || this.formData.get('password')?.touched)){
+                        @if(this.formData.get('password')?.errors?.["required"]){
+                            <span>La contraseña es obligatoria</span>
+                        }
+                        @if(this.formData.get('password')?.errors?.["minlength"]){
+                            <span>Tiene que ser mínimo 6 caracteres</span>
+                        }
+                        @if(this.formData.get('password')?.errors?.["maxlength"]){
+                            <span>Tiene que ser máximo 12 caracteres</span>
+                        }
+                    }
+                </div>
+            </div>
+            <button type="submit" [disabled]="this.formData.invalid">Login</button>
+        </form>
     </div>
-</form>
-
-
-
+</body>
 

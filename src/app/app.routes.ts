@@ -7,16 +7,14 @@ import { ServiciosComponent } from "./pages/public/servicios/servicios.component
 import { UserComponent } from "./pages/private/user/user.component";
 import { PagesNotFoundComponent } from "./pages/public/pages-not-found/pages-not-found.component";
 import { DashboardComponent } from "./pages/private/dashboard/dashboard.component";
-import { CategoriasComponent } from "./pages/private/categorias/categorias.component";
 import { CitasComponent } from "./pages/private/citas/citas.component";
 import { RepuestosComponent } from "./pages/private/repuestos/repuestos.component";
-import { CrearRepuestosComponent } from "./pages/private/crear-repuestos/crear-repuestos.component";
-import { EditarRepuestosComponent } from "./pages/private/editar-repuestos/editar-repuestos.component";
-import { ListadoRepuestosComponent } from "./pages/public/listado-repuestos/listado-repuestos.component";
+import { CrearProductComponent } from "./pages/private/crear-product/crear-product.component";
+import { EditarProductComponent } from "./pages/private/editar-product/editar-product.component";
 import { CrearServicioComponent } from "./pages/private/crear-servicio/crear-servicio.component";
-import { CrearCategoriaComponent } from "./pages/private/crear-categoria/crear-categoria.component";
 import { AgendarCitaComponent } from "./pages/public/agendar-cita/agendar-cita.component";
 import { EditarServicioComponent } from "./pages/private/editar-servicio/editar-servicio.component";
+import { CrearCategoryComponent } from "./pages/private/crear-category/crear-category.component";
 
 
 export const routes : Routes = [
@@ -27,16 +25,13 @@ export const routes : Routes = [
     {path: 'credits', component: CreditsComponent},
     {path: 'servicios', component: ServiciosComponent},
     {path: 'dashboard', component: DashboardComponent},
-    {path: 'repuestos',component:ListadoRepuestosComponent},
     {path: 'cita/agendar', component: AgendarCitaComponent},
     {path: 'dashboard/users', component: UserComponent},
-    {path: 'dashboard/categorias', component: CategoriasComponent},
     {path: 'dashboard/citas', component: CitasComponent},
     {path: 'dashboard/repuestos', component: RepuestosComponent},
-    {path: 'dashboard/repuestos/crear', component: CrearRepuestosComponent},
-    {path: 'dashboard/categorias/crear', component: CrearCategoriaComponent},
-    {path: 'dashboard/repuestos/editar', component: EditarRepuestosComponent},
-    {path: 'dashboard/repuestos/lista', component: ListadoRepuestosComponent}, 
+    {path: 'dashboard/product/crear', component: CrearProductComponent},
+    {path: 'dashboard/category/crear', component: CrearCategoryComponent},
+    {path: 'dashboard/product/editar', component: EditarProductComponent},
     {path:'dashboard/servicios/crear',component: CrearServicioComponent},
     {path: 'dashboard/servicios/editar', component: EditarServicioComponent },
     {path: "404", component: PagesNotFoundComponent},

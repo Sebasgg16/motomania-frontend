@@ -3,30 +3,30 @@
 (ngSubmit)="onSubmit()"
 >
     
-    <h1>Crear repuestos</h1>
+    <h1>Editar Producto</h1>
     <div class="form-content">
         <div class="field">
-            <label for="name">escriba el nombre *</label>
+            <label for="name">Editar Nombre </label>
             <input type="text" formControlName="name" id="name" placeholder="name">
         </div>
         <div class="field">
-            <label for="description">escriba la Descripcion *</label>
+            <label for="description">Editar Descripcion</label>
             <input type="text" formControlName="description" id="description" placeholder="ajsbdkabdj">
         </div>
         <div class="field">
-            <label for="price">Precio Del repuesto*</label>
+            <label for="price">Editar Precio</label>
             <input type="number" formControlName="price" id="price" placeholder="ej. 23423">
         </div>
         <div class="field">
-            <label for="stock">unidades disponibles*</label>
+            <label for="stock">Unidades Disponibles</label>
             <input type="number" formControlName="stock" id="stock" placeholder="ej. 23423">
         </div>
         <div class="field">
-            <label for="urlImage">Suba la imagen *</label>
+            <label for="urlImage">Suba La Imagen </label>
             <input type="text" formControlName="urlImage" id="urlImage" placeholder="">
         </div>
         <div class="field">
-            <label for="categorias">Nombre De categorias*</label>
+            <label for="categorias">Categoria</label>
             <select formControlName="categorias" id="categorias"> 
                 <option value="">seleccionar</option>
                 @for (categoria of categorias; track $index) {
@@ -35,7 +35,7 @@
             </select>
         </div>
         <div class="field">
-            <label for="state">estado del producto*</label>
+            <label for="state">Estado Del Producto</label>
             <select formControlName="state" id="state"> 
                 <option value="">seleccionar</option>
                 <option value="true">disponible</option>
@@ -45,7 +45,7 @@
        
         
         <div class="field">
-            <button type="submit">crear repuesto</button>
+            <button type="submit"> Guardar Cambios </button>
         </div>
     </div>
 

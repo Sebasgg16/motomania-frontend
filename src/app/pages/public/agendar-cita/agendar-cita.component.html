@@ -8,10 +8,30 @@
         <div class="field">
             <label for="name">Escriba su nombre *</label>
             <input type="text" formControlName="name" id="name" placeholder="nombre">
+            <div class="error">
+                @if(this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty ||
+                this.formData.get('name')?.touched)){
+
+                @if(this.formData.get('name')?.errors?.["required"] ){
+                <span>Este Campo Es Obligatorio</span>
+                }
+               
+                }
+            </div>
         </div>
         <div class="field">
             <label for="description">Problema *</label>
            <textarea formControlName="description" id="description" placeholder="resuma el problema que presenta su vehiculo"></textarea>
+           <div class="error">
+            @if(this.formData.get('description')?.invalid && (this.formData.get('description')?.dirty ||
+            this.formData.get('description')?.touched)){
+
+            @if(this.formData.get('description')?.errors?.["required"] ){
+            <span>Este Campo Es Obligatorio</span>
+            }
+           
+            }
+        </div>
         </div>
         <div class="field">
             <label for="day">Dia de la cita *</label>

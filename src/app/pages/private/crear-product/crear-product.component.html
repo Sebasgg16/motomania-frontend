@@ -1,0 +1,88 @@
+<form
+[formGroup]="formData"
+(ngSubmit)="onSubmit()"
+>
+    
+    <h1>Crear Producto</h1>
+    <div class="form-content">
+        <div class="field">
+            <label for="name">escriba el nombre *</label>
+            <input type="text" formControlName="name" id="name" placeholder="name">
+            <div class="error">
+                @if(this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty ||
+                this.formData.get('name')?.touched)){
+
+                @if(this.formData.get('name')?.errors?.["required"] ){
+                <span>Este Campo Es Obligatorio</span>
+                }
+               
+                }
+            </div>
+        </div>
+        <div class="field">
+            <label for="description">Escriba la Descripcion *</label>
+            <input type="text" formControlName="description" id="description" placeholder="ajsbdkabdj">
+            <div class="error">
+                @if(this.formData.get('description')?.invalid && (this.formData.get('description')?.dirty ||
+                this.formData.get('description')?.touched)){
+
+                @if(this.formData.get('description')?.errors?.["required"] ){
+                <span>Este Campo Es Obligatorio</span>
+                }
+               
+                }
+            </div>
+        </div>
+        <div class="field">
+            <label for="price">Precio Del Producto*</label>
+            <input type="number" formControlName="price" id="price" placeholder="ej. 23423">
+        </div>
+        <div class="field">
+            <label for="stock">Unidades Disponibles*</label>
+            <input type="number" formControlName="stock" id="stock" placeholder="ej. 23423">
+            <div class="error">
+                @if(this.formData.get('stock')?.invalid && (this.formData.get('stock')?.dirty ||
+                this.formData.get('stock')?.touched)){
+
+                @if(this.formData.get('stock')?.errors?.["required"] ){
+                <span>Escriba la cantidad disponible</span>
+                }
+               
+                }
+            </div>
+        </div>
+        <div class="field">
+            <label for="urlImage">Suba la imagen *</label>
+            <input type="text" formControlName="urlImage" id="urlImage" placeholder="">
+        </div>
+        <div class="field">
+            <label for="category">Category *</label>
+            <select formControlName="category" id="category">
+              <option value="">Select...</option>
+              @for ( category of categories ; track $index) {
+                <option [value]="category._id">{{ category.name }}</option>
+              }
+            </select>
+            <div class="error">
+                @if( this.formData.get( 'category' )?.invalid && ( this.formData.get( 'category' )?.dirty || this.formData.get( 'category' )?.touched ) ) {
+                    @if( this.formData.get( 'category' )?.errors?.['required'] ) {
+                        <span>Selecting a category is required</span>
+                    }
+                }
+            </div>
+        <div class="field">
+            <label for="state">Estado Del Producto*</label>
+            <select formControlName="state" id="state"> 
+                <option value="">seleccionar</option>
+                <option value="true">disponible</option>
+                <option value="false">no disponible</option>
+            </select>
+        </div>
+       
+        
+        <div class="field">
+            <button type="submit">Crear Producto</button>
+        </div>
+    </div>
+    </div>
+</form> 
