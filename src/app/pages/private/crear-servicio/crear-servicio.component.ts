@@ -28,7 +28,7 @@ export class CrearServicioComponent {
  
        this.servicioService.createServicio(inputData).subscribe({
          next: (data)=>{
-           console.log(data)
+           console.log(data);
          },
          error:(err)=>{
            console.error(err)

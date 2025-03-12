@@ -16,6 +16,7 @@ html {
 
 body {
     margin: 0;
+    background-color: #D9D9D9;
 }
 
 body.template {
@@ -25,7 +26,12 @@ body.template {
 }
 
 header.header {
-    background: linear-gradient(#1382A1 40%, #072F3B 100%);
+    background: #00000047;
+    filter: drop-shadow(1px 5px 8px black);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
 }
 
 .container.header-content {
@@ -68,7 +74,11 @@ a {
 }
 
 .section.section-principal {
-    background-color: #D9D9D9;
+    /* background-color: #D9D9D9; */
+    background-color: black;
+    filter: drop-shadow(1px 5px 8px black);
+    margin: 12.5rem;
+    border-radius: 6rem;
 }
 
 .principal-content {
@@ -91,9 +101,11 @@ a {
 }
 
 h1.Uno {
-    font-size: 6rem;
-    height: 22rem;
+    font-size: 7.3rem;
+    height: 25rem;
     margin: 2rem;
+    display: flex;
+    text-align: left;
 }
 
 p.Uno {
@@ -115,9 +127,24 @@ p.Uno {
 
 img.Moto {
     margin-inline: inherit;
-    border-radius: 2rem;
+    border-radius: 7rem;
 }
 
+img.Imagen-1 {
+    height: 14rem;
+}
+
+img.Imagen-2 {
+    height: 14rem;
+}
+
+img.Imagen-3 {
+    height: 14rem;
+}
+
+img.Imagen-4 {
+    height: 14rem;
+}
 
 .main-content__descrip {
     background-color: white;
@@ -127,9 +154,10 @@ img.Moto {
 .Nosotros {
     position: relative;
     display: flex;
-    gap: 6em;
+    gap: 10rem;
     align-items: center;
-    height: 40rem;
+    height: 15rem;
+    margin: 5rem;
 }
 
 h1.Dos {
@@ -137,7 +165,6 @@ h1.Dos {
     height: 12rem;
     margin: 5rem;
     align-items: center;
-    background-color: #D9D9D9;
     display: inline-flex;
     text-align: center;
     padding: 4rem;
@@ -153,6 +180,9 @@ p.Dos {
 
 .section.section-servicios {
     background-color: #D9D9D9;
+    filter: drop-shadow(1px 5px 12px black);
+    margin: 11rem;
+    border-radius: 6rem;
 }
 
 .servicios-content {
@@ -171,6 +201,7 @@ h1.Tres {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-decoration: overline;
 }
 
 .boton-motos {
@@ -187,7 +218,7 @@ h1.Tres {
     align-items: center;
     text-decoration: none;
     height: 26rem;
-    background-color: #3698B2;
+    background: black;
     padding: 3rem;
     text-align: center;
     border-radius: 5rem;
@@ -203,28 +234,24 @@ a {
 }
 
 button.btn-moto1 {
-    background-color: #3698B2;
-    color: white;
+    background-color: #000000;
     height: 25rem;
     padding: 2rem;
 }
 
 button.btn-moto2 {
-    background-color: #3698B2;
-    color: white;
+    background-color: #000000;
     height: 25rem;
     padding: 2rem;
 }
 
 button.btn-moto3 {
-    background-color: #3698B2;
-    color: white;
+    background-color: #000000;
     height: 25rem;
 }
 
 button.btn-moto4 {
-    background-color: #3698B2;
-    color: white;
+    background-color: #000000;
     height: 25rem;
     padding: 2rem;
 }
@@ -245,6 +272,7 @@ button.btn-moto4 {
     height: 36rem;
     padding: 3rem;
     background-color: #D9D9D9;
+    filter: drop-shadow(1px 5px 12px black);
     border-radius: 10rem;
 }
 
@@ -272,6 +300,7 @@ p.Cinco {
     justify-content: center;
     align-items: center;
     align-content: space-around;
+    filter: drop-shadow(1px 5px 12px rgb(47, 164, 218));
 }
 
 img.End {
@@ -463,8 +492,8 @@ p {
 
 
 footer {
-    background: linear-gradient(#1382A1 40%, #072F3B 100%);
-    /* position: fixed; */
+    background: black;
+    filter: drop-shadow(1px 5px 15px black);
     bottom: 0;
     width: 100%;
     margin: 0 auto;
