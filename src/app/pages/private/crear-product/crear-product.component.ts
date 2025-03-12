@@ -25,13 +25,13 @@ export class CrearProductComponent {
       price: new FormControl(0, [Validators.required]),
       stock: new FormControl(1, [Validators.required]),
       urlImage: new FormControl('', [Validators.required]),
-      categorias: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required]),
       state: new FormControl(true, [Validators.required]),
     })
 
   }
   ngOnInit() {
-    this.categoryService.createCategorys().subscribe({
+    this.categoryService.getCategories().subscribe({
       next: ( data: any ) => {
         console.log( data );
         this.categories = data.data;

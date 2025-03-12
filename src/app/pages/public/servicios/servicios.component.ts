@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import { ServicioService } from '../../../services/servicio.service';
+import { Servicio } from '../../../interfaces/service';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-servicios',
   imports: [],
@@ -7,5 +9,28 @@ import { Component } from '@angular/core';
   styleUrl: './servicios.component.css'
 })
 export class ServiciosComponent {
+  services: Servicio[] = []
+  isloading:boolean=true
+  constructor( private serviceService: ServicioService ) {}
 
+  ngOnInit() {
+    this.serviceService.getservice().subscribe({
+      next: ( data ) => {
+        console.log( data );
+        console.log( 'Successfully obtains categories' );
+
+        this.services = data.data ?? [];    // Asignara una lista vacia para evitar asignar undefined
+      },
+      error: ( error ) => {
+        console.error( error );
+        this.isloading = false
+      },
+      complete: () => {
+        this.isloading=false
+      }
+    });
+  }
+
+ 
+  
 }

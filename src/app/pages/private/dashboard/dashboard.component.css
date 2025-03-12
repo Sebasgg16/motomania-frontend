@@ -1,0 +1,25 @@
+.lista-punto{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.lista{
+    border: 3px solid;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: start;
+}
+
+li{
+  list-style: none;
+}
+ul {
+    font-size: 2.1rem;
+}
+ul.lista-link {
+    padding: 2px 2px;
+}
