@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Servicio } from '../interfaces/service';
+import { Servicio } from '../interfaces/servicio';
 import { Response } from '../interfaces/response';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -24,6 +24,15 @@ export class ServicioService {
   }
   getservice() : Observable<Response<Servicio[]>> {
     return this.http.get<Response<Servicio[]>>( 'http://localhost:3000/api/services' );
+  }
+  deleteserviceById( id: string ) : Observable<Response<Servicio>> {
+    return this.http.delete<Response<Servicio>>( `http://localhost:3000/api/services/${ id }`, { headers: this.headers } );
+  }
+  updateserviceById( id: string, updatedservice: any ) {
+    return this.http.patch( `http://localhost:3000/api/services/${ id }`, updatedservice, { headers: this.headers } )
+  }
+  getserviceById( id: string ) : Observable<Response<Servicio>> {
+    return this.http.get<Response<Servicio>>( `http://localhost:3000/api/services/${ id }`, { headers: this.headers } );
   }
 
 

@@ -103,7 +103,7 @@
 <h1>Listado de servicios</h1>
 
 @if ( isloading ) {
-    <div>Loading products...</div>
+    <div>Loading servicios...</div>
   } @else {
       @if ( services.length === 0) {
         <div class="no-data">Don't have Producs.</div>
@@ -112,22 +112,34 @@
           <thead>
             <tr>
               <th>Nombre Servicio</th>
-              <th>descripcion del producto</th>
-              <th></th>
+              <th>descripcion del servicio</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            @for ( services of services; track services._id ) {
-              <tr>
-                <td>{{ services.name }}</td>
-                <td>{{ services.description }}</td>
-                <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </td>
-              </tr>
-            }
+            @for ( servicios of services; track servicios._id ) {
+                <tr>
+                  <td>
+                    @if ( ! servicios?.urlimage ) {
+                      <img src="assets/images/no-image-available.jpg" class="image-avatar" alt="No image available" />
+                    }
+                    @else {
+                      <img [src]="servicios.urlimage" class="image-avatar" [alt]="servicios.name" />
+                    }
+
+                  </td>
+                  <td>
+                    <div class="name">{{ servicios.name }}</div>
+                  </td>
+                  <td>{{ servicios.description }}</td>
+                  <td>
+                  </td>
+                  <td>
+                    <a [routerLink]="'/dashboard/servicios/editar/' + (servicios._id ?? '')">Editar</a>
+                    <button (click)="onRemove( servicios._id ?? '' )">Eliminar</button>
+                  </td>
+                </tr>
+              }
           </tbody>
         </table>
       }

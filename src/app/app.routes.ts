@@ -33,7 +33,7 @@ export const routes : Routes = [
     {path: 'dashboard/category/crear', component: CrearCategoryComponent},
     {path: 'dashboard/product/editar', component: EditarProductComponent},
     {path:'dashboard/servicios/crear',component: CrearServicioComponent},
-    {path: 'dashboard/servicios/editar', component: EditarServicioComponent },
+    {path: 'dashboard/servicios/editar/:id', component: EditarServicioComponent },
     {path: "404", component: PagesNotFoundComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', redirectTo: '404', pathMatch: "full"}
