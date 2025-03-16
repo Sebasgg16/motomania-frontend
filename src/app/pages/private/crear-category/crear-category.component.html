@@ -1,32 +1,38 @@
-<form
-[formGroup]="formData"
-(ngSubmit)="onSubmit()"
->
-    
-    <h1>Crear categoria</h1>
-    <div class="form-content">
-        <div class="field">
-            <label for="name">Escriba el nombre de la categoria *</label>
-            <input type="text" formControlName="name" id="name" placeholder="">
-            <div class="error">
-                @if(this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty ||
-                this.formData.get('name')?.touched)){
+<body>
+    <div class="container">
+    <form [formGroup]="formData" 
+    (ngSubmit)="onSubmit()" 
+    class="register-form">
+            <h1>Crear Categoría</h1>
 
-                @if(this.formData.get('name')?.errors?.["required"] ){
-                <span>Este Campo Es Obligatorio</span>
-                }
-               
-                }
+
+
+            <div class="field">
+
+
+                <label for="name">Escriba el nombre de la categoría *</label>
+                <input type="text" formControlName="name" id="name" placeholder="Nombre de la categoría">
+                <div class="error">
+                    @if(this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || this.formData.get('name')?.touched)){
+                        @if(this.formData.get('name')?.errors?.["required"] ){
+                            <span>Este campo es obligatorio</span>
+                        }
+                    }
+                </div>
             </div>
-        </div>
-        <div class="field">
-            <label for="description">Descripcion de la categoria *</label>
-           <textarea formControlName="description" id="description" placeholder="escriba la descipcion de la categoria"></textarea>
-        
-        </div>
-        <div class="field">
-            <button type="submit" [disabled]="this.formData.invalid">Register Category</button>
-        </div>
-    </div>
 
-</form> 
+
+            <div class="field">
+                <label for="description">Descripción de la categoría *</label>
+                <textarea formControlName="description" id="description" placeholder="Escriba la descripción de la categoría"></textarea>
+            </div>
+
+
+            <div class="field">
+                <button type="submit" [disabled]="this.formData.invalid">Registrar Categoría</button>
+            </div>
+
+
+        </form>
+    </div>
+</body>

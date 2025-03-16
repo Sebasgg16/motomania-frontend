@@ -11,10 +11,11 @@ import { CitasComponent } from "./pages/private/citas/citas.component";
 import { RepuestosComponent } from "./pages/private/repuestos/repuestos.component";
 import { CrearProductComponent } from "./pages/private/crear-product/crear-product.component";
 import { EditarProductComponent } from "./pages/private/editar-product/editar-product.component";
-import { CrearServicioComponent } from "./pages/private/crear-servicio/crear-servicio.component";
+import { CrearServicioComponent } from "./pages/private/servicios/crear-servicio/crear-servicio.component";
 import { AgendarCitaComponent } from "./pages/public/agendar-cita/agendar-cita.component";
-import { EditarServicioComponent } from "./pages/private/editar-servicio/editar-servicio.component";
+import { EditarServicioComponent } from "./pages/private/servicios/editar-servicio/editar-servicio.component";
 import { CrearCategoryComponent } from "./pages/private/crear-category/crear-category.component";
+import { ListaServiciosComponent } from "./pages/private/servicios/lista-servicios/lista-servicios.component";
 
 
 export const routes : Routes = [
@@ -27,6 +28,7 @@ export const routes : Routes = [
     {path: 'dashboard', component: DashboardComponent},
     {path: 'cita/agendar', component: AgendarCitaComponent},
     {path: 'dashboard/users', component: UserComponent},
+    {path: 'dashboard/servicios', component: ListaServiciosComponent},
     {path: 'dashboard/citas', component: CitasComponent},
     {path: 'dashboard/repuestos', component: RepuestosComponent},
     {path: 'dashboard/product/crear', component: CrearProductComponent},

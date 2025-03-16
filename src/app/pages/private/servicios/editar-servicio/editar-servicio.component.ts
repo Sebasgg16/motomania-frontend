@@ -1,14 +1,14 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ServicioService } from '../../../services/servicio.service';
+import { ServicioService } from '../../../../services/servicio.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Response } from '../../../interfaces/response';
-import { Servicio } from '../../../interfaces/servicio';
+import { Response } from '../../../../interfaces/response';
+import { Servicio } from '../../../../interfaces/servicio';
 
 @Component({
   selector: 'app-editar-servicio',
-  imports: [ReactiveFormsModule, JsonPipe],
+  imports: [ReactiveFormsModule],
   templateUrl: './editar-servicio.component.html',
   styleUrl: './editar-servicio.component.css'
 })
