@@ -28,7 +28,7 @@ body.template {
 header.header {
     background: #00000047;
     filter: drop-shadow(1px 5px 8px black);
-    position: fixed;
+    position: sticky;
     top: 0px;
     width: 100%;
     z-index: 2;

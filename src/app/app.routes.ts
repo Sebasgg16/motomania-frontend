@@ -13,7 +13,6 @@ import { CrearProductComponent } from "./pages/private/crear-product/crear-produ
 import { EditarProductComponent } from "./pages/private/editar-product/editar-product.component";
 import { CrearServicioComponent } from "./pages/private/crear-servicio/crear-servicio.component";
 import { AgendarCitaComponent } from "./pages/public/agendar-cita/agendar-cita.component";
-import { EditarServicioComponent } from "./pages/private/editar-servicio/editar-servicio.component";
 import { CrearCategoryComponent } from "./pages/private/crear-category/crear-category.component";
 
 
@@ -33,7 +32,6 @@ export const routes : Routes = [
     {path: 'dashboard/category/crear', component: CrearCategoryComponent},
     {path: 'dashboard/product/editar', component: EditarProductComponent},
     {path:'dashboard/servicios/crear',component: CrearServicioComponent},
-    {path: 'dashboard/servicios/editar', component: EditarServicioComponent },
     {path: "404", component: PagesNotFoundComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', redirectTo: '404', pathMatch: "full"}

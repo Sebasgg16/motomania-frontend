@@ -100,36 +100,3 @@
 
 
 </section>
-<h1>Listado de servicios</h1>
-
-@if ( isloading ) {
-    <div>Loading products...</div>
-  } @else {
-      @if ( services.length === 0) {
-        <div class="no-data">Don't have Producs.</div>
-      } @else {
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Nombre Servicio</th>
-              <th>descripcion del producto</th>
-              <th></th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            @for ( services of services; track services._id ) {
-              <tr>
-                <td>{{ services.name }}</td>
-                <td>{{ services.description }}</td>
-                <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </td>
-              </tr>
-            }
-          </tbody>
-        </table>
-      }
-  }
-

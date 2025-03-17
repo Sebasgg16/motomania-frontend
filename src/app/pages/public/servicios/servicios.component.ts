@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ServicioService } from '../../../services/servicio.service';
+import { ServicioService } from '../../../services/servicios.service';
 import { Servicio } from '../../../interfaces/service';
 import { RouterLink } from '@angular/router';
 @Component({
@@ -11,10 +11,10 @@ import { RouterLink } from '@angular/router';
 export class ServiciosComponent {
   services: Servicio[] = []
   isloading:boolean=true
-  constructor( private serviceService: ServicioService ) {}
+  constructor( private serviciosService: ServicioService ) {}
 
   ngOnInit() {
-    this.serviceService.getservice().subscribe({
+    this.serviciosService.getservice().subscribe({
       next: ( data ) => {
         console.log( data );
         console.log( 'Successfully obtains categories' );
@@ -31,6 +31,4 @@ export class ServiciosComponent {
     });
   }
 
- 
-  
 }
