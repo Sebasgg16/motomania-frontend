@@ -1,6 +1,9 @@
-<body>
-    <div class="container">
- <form action
+<div class="container">
+
+       
+
+ <form 
+[formGroup]="formData"
 (ngSubmit)="onSubmit()" 
 class="register-form">
             <h1>Crear Producto</h1>
@@ -8,7 +11,8 @@ class="register-form">
                 <label for="name">Escriba el nombre *</label>
                 <input type="text" formControlName="name" id="name" placeholder="Nombre">
                 <div class="error">
-                    @if(this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || this.formData.get('name')?.touched)){
+                    @if(this.formData.get('name')?.invalid && (this.formData.get('name')?.dirty || 
+                    this.formData.get('name')?.touched)){
                         @if(this.formData.get('name')?.errors?.["required"] ){
                             <span>Este campo es obligatorio</span>
                         }
@@ -74,4 +78,3 @@ class="register-form">
             </div>
         </form>
     </div>
-</body>   

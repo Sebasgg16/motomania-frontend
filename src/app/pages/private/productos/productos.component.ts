@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Product } from '../../../interfaces/product';
 import { ProductService } from '../../../services/products.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })

@@ -1,8 +1,8 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ProductService } from '../../../services/products.service';
-import { CategoryService } from '../../../services/category.service';
+import { ProductService } from '../../../../services/products.service';
+import { CategoryService } from '../../../../services/category.service';
 
 @Component({
   selector: 'app-crear-product',
@@ -12,7 +12,7 @@ import { CategoryService } from '../../../services/category.service';
 })
 export class CrearProductComponent {
   formData!: FormGroup
-  categories!: Array<{ _id: string; name: string; }>;
+  categories!: any;
   
 
   constructor(
