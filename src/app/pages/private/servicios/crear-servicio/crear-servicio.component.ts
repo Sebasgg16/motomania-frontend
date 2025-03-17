@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ServicioService } from '../../../services/servicios.service';
+import { ServicioService } from '../../../../services/servicios.service';
 
 @Component({
   selector: 'app-crear-servicio',

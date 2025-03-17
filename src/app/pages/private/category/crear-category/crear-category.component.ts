@@ -1,6 +1,7 @@
-import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CategoryService } from '../../../../services/category.service';
+
 @Component({
   selector: 'app-crear-category',
   imports: [ReactiveFormsModule],
@@ -9,24 +10,36 @@ import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angula
 })
 export class CrearCategoryComponent {
   formData!:FormGroup
-  constructor(){
+  constructor(private categoryService: CategoryService){
     this.formData = new FormGroup({
       name: new FormControl('', [Validators.required]),
       description: new FormControl (''),
     })
 
   }
-  onSubmit() {
+  onSubmit(){
     const inputData = this.formData.value
-    if (this.formData.valid) {
-      console.log(inputData)
-      
-      
-
-    }
-    this.formData.reset
+     if(this.formData.valid){
+       console.log(inputData)
+ 
+ 
+       this.categoryService.createCategory(inputData).subscribe({
+         next: (data)=>{
+           console.log(data);
+         },
+         error:(err)=>{
+           console.error(err)
+         },
+         complete: ()=>{
+           this.formData.reset()
+         }
+       });
+     }
+    
   }
 }
+
+
 
 
 

@@ -1,0 +1,35 @@
+<h1>Listado de categorias</h1>
+
+@if ( isloading ) {
+    <div>Loading categorias...</div>
+  } @else {
+      @if ( categorias.length === 0) {
+        <div class="no-data">Don't have categorys.</div>
+      } @else {
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Nombre de la categoria</th>
+              <th>descripcion de la categoria</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for ( categoria of categorias; track categoria._id ) {
+                <tr>
+                  <td>
+                    <div class="name">{{ categoria.name }}</div>
+                  </td>
+                  <td>{{ categoria.description }}</td>
+                  <td>
+                  </td>
+                  <td>
+                    <a [routerLink]="'/dashboard/category/editar' + (categoria._id ?? '')">Editar</a>
+                    <button (click)="onRemove( categoria._id ?? '' )">Eliminar</button>
+                  </td>
+                </tr>
+              }
+          </tbody>
+        </table>
+      }
+  }

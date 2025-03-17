@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ServicioService } from '../../../services/servicios.service';
-import { Servicio } from '../../../interfaces/service';
 import { RouterLink } from '@angular/router';
+import { Servicio } from '../../../interfaces/servicio';
 @Component({
   selector: 'app-servicios',
   imports: [],
@@ -30,5 +30,6 @@ export class ServiciosComponent {
       }
     });
   }
+
 
 }

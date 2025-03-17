@@ -1,8 +1,8 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ProductsService } from '../../../services/products.service';
-import { CategoryService } from '../../../services/category.service';
+import { ProductService } from '../../../../services/products.service';
+import { CategoryService } from '../../../../services/category.service';
 
 @Component({
   selector: 'app-crear-product',
@@ -12,11 +12,11 @@ import { CategoryService } from '../../../services/category.service';
 })
 export class CrearProductComponent {
   formData!: FormGroup
-  categories!: Array<{ _id: string; name: string; }>;
+  categories!: any;
   
 
   constructor(
-    private productService: ProductsService,
+    private productService: ProductService,
     private categoryService: CategoryService
   ) {
     this.formData = new FormGroup({
@@ -47,13 +47,13 @@ export class CrearProductComponent {
     const inputData = this.formData.value
     if (this.formData.valid) {
       console.log(inputData)
-      this.productService.createProducts(inputData).subscribe({
+      this.productService.createProduct(inputData).subscribe({
         next: (data) => {
           console.log(data)
           console.log( 'Product registered successfully' );
         },
-        error: (err) => {
-          console.error(err)
+        error: ( error: any ) => {
+          console.error(error)
         },
         complete: () => {
           this.formData.reset()

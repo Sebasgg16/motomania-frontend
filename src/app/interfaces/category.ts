@@ -1,4 +1,4 @@
-export interface Servicio {
+export interface Category {
     _id?: string;
     name: string;
     description?: string;
