@@ -15,7 +15,7 @@ export class ProductosComponent {
   constructor( private productService: ProductService ) {}
 
     ngOnInit() {
-      this.productService.getProducts().subscribe({
+      this.productService.getproducts().subscribe({
         next: (data) => {
           console.log(data);
           console.log( "Successfully obtains productos");

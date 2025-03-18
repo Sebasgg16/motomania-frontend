@@ -17,6 +17,7 @@ import { CrearCategoryComponent } from "./pages/private/category/crear-category/
 import { ListaServiciosComponent } from "./pages/private/servicios/lista-servicios/lista-servicios.component";
 import { ProductosComponent } from "./pages/private/productos/productos.component";
 import { CategoryComponent } from "./pages/private/category/category.component";
+import { authGuard } from "./guards/auth.guard";
 
 
 export const routes : Routes = [
@@ -26,7 +27,7 @@ export const routes : Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'credits', component: CreditsComponent},
     {path: 'servicios', component: ServiciosComponent},
-    {path: 'dashboard', component: DashboardComponent},
+    {path: 'dashboard', component: DashboardComponent, canActivate: [authGuard]}, 
     {path: 'dashboard/productos', component: ProductosComponent},
     {path: 'dashboard/category', component: CategoryComponent},
     {path: 'cita/agendar', component: AgendarCitaComponent},

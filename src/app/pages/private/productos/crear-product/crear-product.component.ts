@@ -1,8 +1,8 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ProductService } from '../../../../services/products.service';
 import { CategoryService } from '../../../../services/category.service';
+import { ProductService } from '../../../../services/products.service';
 
 @Component({
   selector: 'app-crear-product',

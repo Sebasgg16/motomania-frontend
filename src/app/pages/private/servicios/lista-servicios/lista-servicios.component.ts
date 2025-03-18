@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Servicio } from '../../../../interfaces/servicio';
-import { ServicioService } from '../../../../services/servicio.service';
 import { RouterLink } from '@angular/router';
+import { ServicioService } from '../../../../services/servicios.service';
 
 @Component({
   selector: 'app-lista-servicios',
