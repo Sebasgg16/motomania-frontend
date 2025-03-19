@@ -18,27 +18,28 @@ import { ListaServiciosComponent } from "./pages/private/servicios/lista-servici
 import { ProductosComponent } from "./pages/private/productos/productos.component";
 import { CategoryComponent } from "./pages/private/category/category.component";
 import { authGuard } from "./guards/auth.guard";
+import { noAuthGuard } from "./guards/no-auth.guard";
 
 
 export const routes : Routes = [
    
     {path : 'home', component: HomeComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent},
+    {path: 'login', component: LoginComponent, canActivate: [noAuthGuard]},
+    {path: 'register', component: RegisterComponent, canActivate: [noAuthGuard]},
     {path: 'credits', component: CreditsComponent},
     {path: 'servicios', component: ServiciosComponent},
     {path: 'dashboard', component: DashboardComponent, canActivate: [authGuard]}, 
-    {path: 'dashboard/productos', component: ProductosComponent},
-    {path: 'dashboard/category', component: CategoryComponent},
+    {path: 'dashboard/productos', component: ProductosComponent, canActivate: [authGuard]},
+    {path: 'dashboard/category', component: CategoryComponent, canActivate: [authGuard]},
     {path: 'cita/agendar', component: AgendarCitaComponent},
-    {path: 'dashboard/users', component: UserComponent},
-    {path: 'dashboard/servicios', component: ListaServiciosComponent},
-    {path: 'dashboard/citas', component: CitasComponent},
-    {path: 'dashboard/product/crear', component: CrearProductComponent},
-    {path: 'dashboard/category/crear', component: CrearCategoryComponent},
-    {path: 'dashboard/product/editar', component: EditarProductComponent},
-    {path:'dashboard/servicios/crear',component: CrearServicioComponent},
-    {path: 'dashboard/servicios/editar/:id', component: EditarServicioComponent },
+    {path: 'dashboard/users', component: UserComponent, canActivate: [authGuard]},
+    {path: 'dashboard/servicios', component: ListaServiciosComponent, canActivate: [authGuard]},
+    {path: 'dashboard/citas', component: CitasComponent, canActivate: [authGuard]},
+    {path: 'dashboard/product/crear', component: CrearProductComponent, canActivate: [authGuard]},
+    {path: 'dashboard/category/crear', component: CrearCategoryComponent, canActivate: [authGuard]},
+    {path: 'dashboard/product/editar', component: EditarProductComponent, canActivate: [authGuard]},
+    {path:'dashboard/servicios/crear',component: CrearServicioComponent, canActivate: [authGuard]},
+    {path: 'dashboard/servicios/editar/:id', component: EditarServicioComponent, canActivate: [authGuard]},
     {path: "404", component: PagesNotFoundComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', redirectTo: '404', pathMatch: "full"}
