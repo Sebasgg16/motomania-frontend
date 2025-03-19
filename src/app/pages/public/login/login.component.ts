@@ -2,6 +2,7 @@
 import { Component, input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class LoginComponent {
    formData! : FormGroup
-   constructor(private authService: AuthService){
+   constructor(private authService: AuthService, private router: Router){
     this.formData = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength (6), Validators.maxLength(12)])
@@ -31,6 +32,7 @@ export class LoginComponent {
           localStorage.setItem('token', data.token!)
           delete data.data?.password
           localStorage.setItem('authUser', JSON.stringify(data.data))
+          this.router.navigateByUrl('/dashboard')
         },
         error:(err)=>{
           console.error(err)

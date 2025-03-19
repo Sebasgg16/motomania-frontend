@@ -1,23 +1,29 @@
-import { CanActivateFn } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { inject } from '@angular/core';
-import { subscribeOn } from 'rxjs';
+import { catchError, map, subscribeOn } from 'rxjs';
 
 export const authGuard: CanActivateFn = (route, state) => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
 
-const authservice = inject (AuthService)
-authservice.verifyAuthenticateUser().subscribe({
-  next: (data) => { 
-    console.log(data);
+  return authService.verifyAuthenticateUser().pipe(
+    map( isAuthenticated => {
+      console.log( 'noAuthGuard', isAuthenticated );
 
-  },
-  error: (error ) => {
-    console.error(error);
-  },
-  complete: () => {
-  }
+      /** Si NO esta autenticado */
+      if ( ! isAuthenticated ) {
+        router.navigate([ '/login' ]);  
+        return false;                   
+      }
 
-})
-
-  return true;
+      return true;                      
+    }),
+    catchError(( error ) => {
+      console.error( error );
+      router.navigate(['/']);          
+      return [ false ];               
+    })
+  );
 };
+
