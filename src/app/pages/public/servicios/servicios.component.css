@@ -95,3 +95,19 @@
   padding: 8px;
   text-align: left;
 }
+
+
+.container-lista-servicios{
+    border: 3px solid black;
+    padding: 4px, 8px;
+}
+img.image-avatar {
+    height: 27rem;
+    width: 30rem;
+}
+tr {
+    background-color: #1382A1;
+}
+td {
+    font-size: 2rem;
+}

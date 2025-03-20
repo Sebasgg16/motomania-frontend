@@ -21,22 +21,11 @@
                 </div>
 
                 <div class="field">
-                    <label for="urlImagen">Suba la imagen *</label>
-                    <input type="text" formControlName="urlImagen" id="urlImagen" placeholder="Suba el archivo">
+                    <label for="urlimage">Suba la imagen *</label>
+                    <input type="text" formControlName="urlimage" id="urlimage" placeholder="Suba el archivo">
                 </div>
 
-                <div class="field">
-                    <label for="price">Precio Del Servicio *</label>
-                    <input type="number" formControlName="price" id="price" placeholder="Asigne un valor">
-                    <div class="error">
-                        @if(this.formData.get('price')?.invalid && (this.formData.get('price')?.dirty ||
-                        this.formData.get('price')?.touched)){
-                            @if(this.formData.get('price')?.errors?.["required"] ){
-                                <span>Asigne Un Precio</span>
-                            }
-                        }
-                    </div>
-                </div>
+               
 
                 <div class="field">
                     <label for="description">Descripción del servicio *</label>

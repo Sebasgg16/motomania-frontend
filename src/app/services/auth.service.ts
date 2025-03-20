@@ -38,7 +38,9 @@ export class AuthService {
   }
 
   logoutUser(): Observable<boolean> {
+    this.user;
     if (this.authUser) {
+      
       this.authUser = null;
 
       localStorage.removeItem('token');
@@ -74,3 +76,4 @@ export class AuthService {
   }
 
 }
+

@@ -13,7 +13,7 @@ export class CrearServicioComponent {
 
   constructor( private servicioService: ServicioService){
     this.formData = new FormGroup({
-      urlImagen: new FormControl('',[Validators.required]),
+      urlimage: new FormControl('',[Validators.required]),
       price: new FormControl(0, [Validators.required]),
       name: new FormControl('', [Validators.required]),
       description: new FormControl ('', [Validators.required]),
