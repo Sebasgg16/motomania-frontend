@@ -6,7 +6,7 @@
 }
 
 .container-service {
-    background-color: #222;
+    background-image: url('/assets/images/fondo-engranaje.png') ;
     color: #fff;
     display: flex;
     justify-content: center;

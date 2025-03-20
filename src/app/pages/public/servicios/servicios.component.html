@@ -8,8 +8,8 @@
                 profesionales capacitados para brindarte la mejor atención.</p>
         </div>
     </div>
-</section>
-<!-- <section class="section section-services">
+<!-- </section>
+<section class="section section-services">
     <div class="container">
         <div class="services-content">
             <div class="card card__servicio card__servicio--left">
@@ -75,27 +75,25 @@
 
 <tbody class="container-lista-servicios">
     @for ( servicios of services; track servicios._id ) {
-        <tr>
-          <td class="container-imagen">
-            @if ( ! servicios?.urlimage ) {
-              <img src="assets/images/no-image-available.jpg" class="image-avatar" alt="No image available" />
-            }
-            @else {
-              <img [src]="servicios.urlimage" class="image-avatar" [alt]="servicios.name" />
-            }
-
-          </td>
-          <td>
-            <div class="name">{{ servicios.name }}</div>
-          </td>
-          <td>{{ servicios.description }}</td>
-          <td>
-          </td>
-          
-        </tr>
-      }
+      <tr class="tarjeta-servicio">
+        <!-- Imagen a la izquierda -->
+        <td class="imagen-servicio">
+          @if ( ! servicios?.urlimage ) {
+            <img src="assets/images/no-image-available.jpg" class="image-avatar" alt="No image available" />
+          }
+          @else {
+            <img [src]="servicios.urlimage" class="image-avatar" [alt]="servicios.name" />
+          }
+        </td>
+  
+        <!-- Información a la derecha -->
+        <td class="info-servicio">
+          <h2 class="titulo-servicio">{{ servicios.name }}</h2>
+          <p class="descripcion-servicio">{{ servicios.description }}</p>
+        </td>
+      </tr>
+    }
   </tbody>
-
 
 
 

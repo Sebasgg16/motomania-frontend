@@ -1,3 +1,6 @@
+<div class="container-lista-productos">
+
+
 <h1>lista de productos</h1>
 <div class="valores"><a routerLink="/dashboard/product/crear"  routerLinkActive="active" class="lista-punto">crear producto</a></div>
 
@@ -7,13 +10,16 @@
     <div>Loading products...</div>
   } @else {
       @if ( products.length === 0) {
-        <div class="no-data">Don't have Producs.</div>
+        <div class="no-data">no tienes productos.</div>
       } @else {
         <table class="data-table">
           <thead>
             <tr>
-              <th>Product Name</th>
-              <th>Product Description</th>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>imagen</th>
+              <th>precio</th>
+              <th>unidades</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -21,10 +27,13 @@
             @for ( product of products; track product._id ) {
               <tr>
                 <td>{{ product.name }}</td>
-                <td>{{ product.description }}</td>
+                <td>{{product.description}}</td>
+                <td>{{ product.urlImage }}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.stock}}</td>
                 <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                  <a [routerLink]="'/dashboard/product/editar/' + (product._id ?? '')">Editar</a>
+                  <button (click)="onRemove( product._id ?? '' )">Eliminar</button>
                 </td>
               </tr>
             }
@@ -32,4 +41,4 @@
         </table>
       }
   }
-  
+</div>

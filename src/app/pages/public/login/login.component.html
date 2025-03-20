@@ -4,7 +4,8 @@ action="form form-login"
 (ngSubmit)="onSubmit()"
 >
     
-<body>
+<div class="container-login" >
+    
     <div class="container">
         <form [formGroup]="formData" (ngSubmit)="onSubmit()" class="login-form">
             <h1>Login</h1>
@@ -42,5 +43,5 @@ action="form form-login"
             <button type="submit" [disabled]="this.formData.invalid">Login</button>
         </form>
     </div>
-</body>
+</div>
 

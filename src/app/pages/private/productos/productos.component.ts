@@ -31,4 +31,25 @@ export class ProductosComponent {
         }
       });
     }
+
+    onRemove( serviceId : string ) {
+  
+      if( ! serviceId ) {
+        console.error( 'Invalid service ID' );
+        return;
+      }
+  
+      this.productService.deleteProductById( serviceId ).subscribe({
+        next: ( data ) => {
+          console.log( data );
+          console.log( 'Delete service successfully' );
+  
+          this.ngOnInit();    // Actualiza datos
+        },
+        error: ( error ) => {
+          console.error( error );
+        },
+        complete: () => {}
+      });
+    }
   }
