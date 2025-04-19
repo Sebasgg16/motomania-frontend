@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container-lista-categorias {
+    background-color: #111; 
+    color: #fff;
+}
+.container {
+    background: #000; 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    width: 90%;
+    max-width: 1100px; 
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #fff;
+}
+
+.valores {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.lista-punto {
+    background-color: #1382A1;
+    color: #fff;
+    padding: 12px 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    display: flex;
+}
+
+.lista-punto:hover {
+    background-color: #072F3B;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.data-table thead {
+    background-color: #1382A1;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.data-table th {
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    width: 33.33%;
+}
+
+.data-table tbody {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid #1382A1;
+    font-size: 14px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.data-table tr:hover {
+    background-color: rgba(19, 130, 161, 0.3);
+}
+
+td a, td button {
+    padding: 10px 14px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    display: inline-block;
+}
+
+td a {
+    background-color: #1382A1;
+    color: white;
+}
+
+td a:hover {
+    background-color: #0b5c7b;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+td button {
+    background-color: #0d72ac;
+    color: white;
+}
+
+td button:hover {
+    background-color: #cf0707;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.no-data {
+    text-align: center;
+    font-size: 18px;
+    color: #011236;
+    padding: 20px;
+}

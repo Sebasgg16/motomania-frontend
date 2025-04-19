@@ -46,7 +46,7 @@ categorias: Category[] = []
           console.log( data );
           console.log( 'Delete service successfully' );
   
-          this.ngOnInit();    // Actualiza datos
+          this.ngOnInit();
         },
         error: ( error ) => {
           console.error( error );

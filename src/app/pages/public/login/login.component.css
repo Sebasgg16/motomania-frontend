@@ -5,19 +5,21 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #222;
+.container-login {
+    background-image: url('/assets/images/fondo-engranaje.png') ;
     color: #fff;
     display: block;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 16rem;
+    
+    height: 65rem;
 }
 
 .container {
     background: #333;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5rem rgba(255, 255, 255, 1.2);
     width: 500px;
     margin: 0 auto;
 }

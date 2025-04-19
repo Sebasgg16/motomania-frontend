@@ -5,8 +5,8 @@
     font-family: sans-serif;
 }
 
-body {
-    background-color: #222;
+.container-category {
+    background-image: url('/assets/images/fondo-engranaje.png') ;
     color: #fff;
     display: flex;
     justify-content: center;

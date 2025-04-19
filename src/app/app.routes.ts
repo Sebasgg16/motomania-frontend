@@ -37,7 +37,7 @@ export const routes : Routes = [
     {path: 'dashboard/citas', component: CitasComponent, canActivate: [authGuard]},
     {path: 'dashboard/product/crear', component: CrearProductComponent, canActivate: [authGuard]},
     {path: 'dashboard/category/crear', component: CrearCategoryComponent, canActivate: [authGuard]},
-    {path: 'dashboard/product/editar', component: EditarProductComponent, canActivate: [authGuard]},
+    {path: 'dashboard/product/editar/:id', component: EditarProductComponent, canActivate: [authGuard]},
     {path:'dashboard/servicios/crear',component: CrearServicioComponent, canActivate: [authGuard]},
     {path: 'dashboard/servicios/editar/:id', component: EditarServicioComponent, canActivate: [authGuard]},
     {path: "404", component: PagesNotFoundComponent},
