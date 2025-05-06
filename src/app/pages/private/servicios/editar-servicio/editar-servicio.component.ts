@@ -24,11 +24,11 @@ export class EditarServicioComponent {
   ){
     console.log('%c constructor: Se ejecuta cuando Angular instancia el componente.', 'color: blue');
     this.formData = new FormGroup({
-      urlImagen: new FormControl ('', [Validators.required]),
+      urlImagen: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required]),
       price: new FormControl(0, [Validators.required]),
-      description: new FormControl ('', [Validators.required]),
-    })
+      description: new FormControl('', [Validators.required]),
+    });
 
   }
   ngOnInit() {
@@ -54,7 +54,7 @@ export class EditarServicioComponent {
           this.formData.patchValue({
             name: data?.data?.name,
             description: data?.data?.description,
-            urlImage: data?.data?.urlimage,
+            urlImagen: data?.data?.urlimage,
           });
         },
         error: (error) => {

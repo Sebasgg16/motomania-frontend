@@ -19,6 +19,7 @@ import { ProductosComponent } from "./pages/private/productos/productos.componen
 import { CategoryComponent } from "./pages/private/category/category.component";
 import { authGuard } from "./guards/auth.guard";
 import { noAuthGuard } from "./guards/no-auth.guard";
+import { EditarCategoriasComponent } from "./pages/private/category/editar-categorias/editar-categorias.component";
 
 
 export const routes : Routes = [
@@ -40,6 +41,7 @@ export const routes : Routes = [
     {path: 'dashboard/product/editar/:id', component: EditarProductComponent, canActivate: [authGuard]},
     {path:'dashboard/servicios/crear',component: CrearServicioComponent, canActivate: [authGuard]},
     {path: 'dashboard/servicios/editar/:id', component: EditarServicioComponent, canActivate: [authGuard]},
+    {path: 'dashboard/category/editar/:id', component: EditarCategoriasComponent, canActivate: [authGuard]},
     {path: "404", component: PagesNotFoundComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', redirectTo: '404', pathMatch: "full"}

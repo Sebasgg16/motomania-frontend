@@ -24,13 +24,15 @@ export class EditarProductComponent {
     private router: Router,
     private route: ActivatedRoute
   ){
-    console.log('%c constructor: Se ejecuta cuando Angular instancia el componente.', 'color: blue');
     this.formData = new FormGroup({
-      urlImagen: new FormControl ('', [Validators.required]),
+      urlImage: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required]),
       price: new FormControl(0, [Validators.required]),
-      description: new FormControl ('', [Validators.required]),
-    })
+      description: new FormControl('', [Validators.required]),
+      stock: new FormControl(0, [Validators.required]),    
+      category: new FormControl('', [Validators.required]),
+      state: new FormControl('true', [Validators.required])
+    });
 
   }
   ngOnInit() {

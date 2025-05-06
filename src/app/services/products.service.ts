@@ -22,19 +22,19 @@ export class ProductService {
   createProduct(newProducts: any) {
     const token = localStorage.getItem('token')
     const headers = new HttpHeaders().set('X-Token', token!)
-    return this.http.post('http://localhost:3000/api/products', newProducts, { headers })
+    return this.http.post('http://3.133.143.218:3004/api/products', newProducts, { headers })
   }
   getproducts(): Observable<Response<Product[]>> {
-    return this.http.get<Response<Product[]>>('http://localhost:3000/api/products');
+    return this.http.get<Response<Product[]>>('http://3.133.143.218:3004/api/products');
   }
   deleteProductById(id: string): Observable<Response<Product>> {
-    return this.http.delete<Response<Product>>(`http://localhost:3000/api/products/${id}`, { headers: this.headers });
+    return this.http.delete<Response<Product>>(`http://3.133.143.218:3004/api/products/${id}`, { headers: this.headers });
   }
   updateProductById(id: string, updateProduct: any) {
-    return this.http.patch(`http://localhost:3000/api/products/${id}`, updateProduct, { headers: this.headers })
+    return this.http.patch(`http://3.133.143.218:3004/api/products/${id}`, updateProduct, { headers: this.headers })
   }
   getProductById(id: string): Observable<Response<Product>> {
-    return this.http.get<Response<Product>>(`http://localhost:3000/api/products/${id}`, { headers: this.headers });
+    return this.http.get<Response<Product>>(`http://3.133.143.218:3004/api/products/${id}`, { headers: this.headers });
   }
 
 }

@@ -18,22 +18,22 @@ export class CategoryService {
   }
 
   getCategories() : Observable<Response<Category[]>> {
-    return this.http.get<Response<Category[]>>( 'http://localhost:3000/api/categorys' );
+    return this.http.get<Response<Category[]>>( 'http://3.133.143.218:3004/api/categorys' );
   }
 
   createCategory( newCategory: Category ) : Observable<Response<Category>> {
-    return this.http.post<Response<Category>>( 'http://localhost:3000/api/categorys', newCategory, { headers: this.headers } );
+    return this.http.post<Response<Category>>( 'http://3.133.143.218:3004/api/categorys', newCategory, { headers: this.headers } );
   }
 
   deleteCategoryById( id: string ) : Observable<Response<Category>> {
-    return this.http.delete<Response<Category>>( `http://localhost:3000/api/categorys/${ id }`, { headers: this.headers } );
+    return this.http.delete<Response<Category>>( `http://3.133.143.218:3004/api/categorys/${ id }`, { headers: this.headers } );
   }
 
   getCategoryById( id: string ) : Observable<Response<Category>> {
-    return this.http.get<Response<Category>>( `http://localhost:3000/api/categorys/${ id }` );
+    return this.http.get<Response<Category>>( `http://3.133.143.218:3004/api/categorys/${ id }` );
   }
 
   updateCategoryById( id: string, updatedCategory: any ) {
-    return this.http.patch( `http://localhost:3000/api/categorys/${ id }`, updatedCategory, { headers: this.headers } )
+    return this.http.patch( `http://3.133.143.218:3004/api/categorys/${ id }`, updatedCategory, { headers: this.headers } )
   }
 }

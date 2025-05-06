@@ -15,9 +15,9 @@ export class HeaderComponent {
     private authservice: AuthService,
     private router: Router
   ) { 
-    this.authUser= JSON.parse(localStorage.getItem('authUser') ?? '')
-    this.user
-     console.log(this.authUser.role);
+    const storedUser = localStorage.getItem('authUser');
+    this.authUser = storedUser ? JSON.parse(storedUser) : null;
+
   }
 
   get user() {

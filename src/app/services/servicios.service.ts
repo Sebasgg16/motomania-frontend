@@ -20,19 +20,19 @@ export class ServicioService {
 
     const token = localStorage.getItem( "token" );
     const headers = new HttpHeaders().set( "x-Token", token! );
-    return this.http.post <Response<Servicio>>( "http://localhost:3000/api/services", newServicio, { headers} );
+    return this.http.post <Response<Servicio>>( "http://3.133.143.218:3004/api/services", newServicio, { headers} );
   }
   getservice() : Observable<Response<Servicio[]>> {
-    return this.http.get<Response<Servicio[]>>( 'http://localhost:3000/api/services' );
+    return this.http.get<Response<Servicio[]>>( 'http://3.133.143.218:3004/api/services' );
   }
   deleteserviceById( id: string ) : Observable<Response<Servicio>> {
-    return this.http.delete<Response<Servicio>>( `http://localhost:3000/api/services/${ id }`, { headers: this.headers } );
+    return this.http.delete<Response<Servicio>>( `http://3.133.143.218:3004/api/services/${ id }`, { headers: this.headers } );
   }
   updateserviceById( id: string, updatedservice: any ) {
-    return this.http.patch( `http://localhost:3000/api/services/${ id }`, updatedservice, { headers: this.headers } )
+    return this.http.patch( `http://3.133.143.218:3004/api/services/${ id }`, updatedservice, { headers: this.headers } )
   }
   getserviceById( id: string ) : Observable<Response<Servicio>> {
-    return this.http.get<Response<Servicio>>( `http://localhost:3000/api/services/${ id }`, { headers: this.headers } );
+    return this.http.get<Response<Servicio>>( `http://3.133.143.218:3004/api/services/${ id }`, { headers: this.headers } );
   }
 
 

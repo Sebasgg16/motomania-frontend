@@ -30,11 +30,11 @@ export class AuthService {
   }
 
   registerUser(newUser: User): Observable<Response<User>> {
-    return this.http.post<Response<User>>('http://localhost:3000/api/auth/register', newUser);
+    return this.http.post<Response<User>>('http://3.133.143.218:3004/api/auth/register', newUser);
   }
 
   loginUser(credentials: User): Observable<Response<User>> {
-    return this.http.post<Response<User>>('http://localhost:3000/api/auth/login', credentials);
+    return this.http.post<Response<User>>('http://3.133.143.218:3004/api/auth/login', credentials);
   }
 
   logoutUser(): Observable<boolean> {
@@ -54,7 +54,7 @@ export class AuthService {
 
 
   verifyAuthenticateUser(): any {
-    return this.http.get('http://localhost:3000/api/auth/re-new-token', {
+    return this.http.get('http://3.133.143.218:3004/api/auth/re-new-token', {
       headers:
         this.getHeaders()
     })

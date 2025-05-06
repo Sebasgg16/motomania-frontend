@@ -12,6 +12,6 @@ export class CitasService{
 
     const token = localStorage.getItem( "token" );
     const headers = new HttpHeaders().set( "x-Token", token! );
-    return this.http.post( "http://localhost:3000/api/citas", newCitas, { headers} );
+    return this.http.post( "http://3.133.143.218:3004/api/citas", newCitas, { headers} );
   }
 }
